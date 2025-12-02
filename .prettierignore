@@ -9,3 +9,7 @@ testing/
 testing*
 test*
 *.pyc
+*latch*
+wf/
+latch_metadata/
+.latch
