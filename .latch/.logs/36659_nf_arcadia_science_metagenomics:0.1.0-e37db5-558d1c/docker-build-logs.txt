@@ -1,0 +1,36 @@
+Step 1/12 : from 812206152185.dkr.ecr.us-west-2.amazonaws.com/latch-base-nextflow:v3.0.6
+ ---> 2f9d32e6b763
+Step 2/12 : workdir /tmp/docker-build/work/
+ ---> Using cache
+ ---> 599fe0fb520a
+Step 3/12 : shell [     "/usr/bin/env", "bash",     "-o", "errexit",     "-o", "pipefail",     "-o", "nounset",     "-o", "verbose",     "-o", "errtrace",     "-O", "inherit_errexit",     "-O", "shift_verbose",     "-c" ]
+ ---> Using cache
+ ---> 54198838c01c
+Step 4/12 : env TZ='Etc/UTC'
+ ---> Using cache
+ ---> 587bcdc0e077
+Step 5/12 : env LANG='en_US.UTF-8'
+ ---> Using cache
+ ---> b94393b74fb6
+Step 6/12 : arg DEBIAN_FRONTEND=noninteractive
+ ---> Using cache
+ ---> c9ad70d75740
+Step 7/12 : run pip install latch==2.67.20
+ ---> Using cache
+ ---> 2a3ae8e262e0
+Step 8/12 : run mkdir /opt/latch
+ ---> Using cache
+ ---> b79d281ea6b3
+Step 9/12 : copy . /root/
+ ---> c329197d057f
+Step 10/12 : arg tag
+ ---> Running in 13b0370c1779
+ ---> 2e41ba7dfe1a
+Step 11/12 : env FLYTE_INTERNAL_IMAGE $tag
+ ---> Running in 733b5b3b30d2
+ ---> 09a332ada9db
+Step 12/12 : workdir /root
+ ---> Running in 8af0e86f0fe0
+ ---> ec675c29c29d
+Successfully built ec675c29c29d
+Successfully tagged 812206152185.dkr.ecr.us-west-2.amazonaws.com/36659_nf_arcadia_science_metagenomics:0.1.0-e37db5-558d1c
