@@ -21,11 +21,11 @@ from latch.types.samplesheet_item import SamplesheetItem
 
 @dataclass
 class NextflowSchemaArgsType:
-    input: typing_extensions.Annotated[LatchFile, FlyteAnnotation({'display_name': 'Input', 'default': None, 'samplesheet': True, 'output': False, 'required': True, 'description': 'Path to comma-separated file containing information about the samples in the experiment.'})]
+    input: typing_extensions.Annotated[LatchFile, FlyteAnnotation({'display_name': 'Input', 'default': None, 'samplesheet': False, 'output': False, 'required': True, 'description': 'Path to comma-separated file containing information about the samples in the experiment.'})]
     outdir: typing_extensions.Annotated[LatchDir, FlyteAnnotation({'display_name': 'Outdir', 'default': None, 'samplesheet': False, 'output': True, 'required': True, 'description': 'The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.'})]
     platform: typing_extensions.Annotated[str, FlyteAnnotation({'display_name': 'Platform', 'default': None, 'samplesheet': False, 'output': False, 'required': True})]
     single_end: typing_extensions.Annotated[typing.Optional[bool], FlyteAnnotation({'display_name': 'Single End', 'default': None, 'samplesheet': False, 'output': False, 'required': False})]
-    sourmash_dbs: typing_extensions.Annotated[typing.Optional[str], FlyteAnnotation({'display_name': 'Sourmash Dbs', 'default': None, 'samplesheet': False, 'output': False, 'required': False})]
+    sourmash_dbs: typing_extensions.Annotated[typing.Optional[LatchFile], FlyteAnnotation({'display_name': 'Sourmash Dbs', 'default': None, 'samplesheet': False, 'output': False, 'required': False})]
     diamond_db: typing_extensions.Annotated[typing.Optional[str], FlyteAnnotation({'display_name': 'Diamond Db', 'default': None, 'samplesheet': False, 'output': False, 'required': False})]
     multiqc_config: typing_extensions.Annotated[typing.Optional[str], FlyteAnnotation({'display_name': 'Multiqc Config', 'default': None, 'samplesheet': False, 'output': False, 'required': False})]
     multiqc_title: typing_extensions.Annotated[typing.Optional[str], FlyteAnnotation({'display_name': 'Multiqc Title', 'default': None, 'samplesheet': False, 'output': False, 'required': False})]
