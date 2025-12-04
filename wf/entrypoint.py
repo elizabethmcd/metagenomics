@@ -101,6 +101,8 @@ def nextflow_runtime(pvc_name: str, args: latch_metadata.WorkflowArgsType) -> No
 
     profiles = ','.join(profile_list)
 
+    
+
     cmd = [
         "/root/nextflow",
         "run",
