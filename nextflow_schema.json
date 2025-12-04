@@ -1,10 +1,10 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/Arcadia-Science/metagenomics//nextflow_schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/Arcadia-Science/metagenomics/main/nextflow_schema.json",
     "title": "Arcadia-Science/metagenomics pipeline parameters",
     "description": "Metagenomics QC, assembly, and evaluation using short or long-read technologies",
     "type": "object",
-    "$defs": {
+    "definitions": {
         "input_output_options": {
             "title": "Input/output options",
             "type": "object",
@@ -15,7 +15,6 @@
                 "input": {
                     "type": "string",
                     "format": "file-path",
-                    "exists": true,
                     "schema": "assets/schema_input.json",
                     "mimetype": "text/csv",
                     "pattern": "^\\S+\\.csv$",
@@ -100,10 +99,6 @@
                 "hook_url": {
                     "type": "string"
                 },
-                "schema_ignore_params": {
-                    "type": "string",
-                    "default": "config_profile_name,config_profile_url,config_profile_contact,config_profile_description,custom_config_base,custom_config_version,enable_conda,genomes,hook_url"
-                },
                 "show_hidden_params": {
                     "type": "boolean"
                 },
@@ -155,13 +150,19 @@
     },
     "allOf": [
         {
-            "$ref": "#/$defs/input_output_options"
+            "$ref": "#/definitions/input_output_options"
         },
         {
-            "$ref": "#/$defs/generic_options"
+            "$ref": "#/definitions/generic_options"
         },
         {
-            "$ref": "#/$defs/max_job_request_options"
+            "$ref": "#/definitions/max_job_request_options"
         }
-    ]
+    ],
+    "properties": {
+        "schema_ignore_params": {
+            "type": "string",
+            "default": "config_profile_name,config_profile_url,config_profile_contact,config_profile_description,custom_config_base,custom_config_version,enable_conda,genomes,hook_url"
+        }
+    }
 }
